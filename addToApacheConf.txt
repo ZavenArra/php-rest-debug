@@ -1,0 +1,4 @@
+<Location "/backend/XXX.php">
+    SetEnvIf Content-Type ^(multipart/form-data)(.*) NEW_CONTENT_TYPE=multipart/form-data-alternate$2 OLD_CONTENT_TYPE=$1$2
+    RequestHeader set Content-Type %{NEW_CONTENT_TYPE}e env=NEW_CONTENT_TYPE
+</Location>
